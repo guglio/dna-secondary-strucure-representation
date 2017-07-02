@@ -1,24 +1,13 @@
-.App {
-  text-align: center;
+.brandImg{
+  width: auto;
+  height: 46px;
+  display: inline-block !important;
+  padding: 0;
+  margin: -13px 1em 0 0;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.navbar-dna{
+  background-color: #292929;
 }
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.navbar-dna .navbar-brand{
+  color: #fff;
 }
