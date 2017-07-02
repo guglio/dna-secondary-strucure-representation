@@ -1,15 +1,29 @@
-.baseline{}
+.baseline{
+  display: inline-block;
+  line-height: 1em;
+}
 .baseBubble{
   display: inline-block;
-  background-color: purple;
   border-radius: 50%;
   text-align: center;
   width: 1.5em;
   height:1.5em;
   line-height: 1.5em;
-  color: #fff;
+}
+.baseBubble .innerText{
+  color: inherit;
+  -webkit-filter: invert(100%);
+    filter: invert(100%);
 }
 .baseLabel{}
 .fontStyleCols .row{
   margin-top: 1em;
+}
+.boobleColorsOption{
+  -webkit-appearance: none;
+}
+.colorPreview{
+  display: inline-block;
+  width: 3em;
+  height: 2em;
 }
