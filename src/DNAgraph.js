@@ -14,8 +14,8 @@ class DNAgraph extends Component{
   render(){
     return(
       <div>
+        DNA: <code>{this.state.dna}</code><br />DBN: <code>{this.state.dbn}</code>
         <GraphStyle />
-        <code>{this.state.dna}</code><br /><code>{this.state.dbn}</code>
       </div>
     )
   }
