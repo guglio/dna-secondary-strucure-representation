@@ -1,0 +1,15 @@
+.baseline{}
+.baseBubble{
+  display: inline-block;
+  background-color: purple;
+  border-radius: 50%;
+  text-align: center;
+  width: 1.5em;
+  height:1.5em;
+  line-height: 1.5em;
+  color: #fff;
+}
+.baseLabel{}
+.fontStyleCols .row{
+  margin-top: 1em;
+}
