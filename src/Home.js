@@ -22,8 +22,9 @@ class Home extends Component {
   }
 
   handleSubmit(event) {
-  console.log('DNA: ' + this.state.dna+'\nDBN: ' + this.state.dbn);
     event.preventDefault();
+    const path = '/'+this.state.dna+'/'+this.state.dbn;
+    this.props.history.push(path);
   }
 
   render() {
@@ -37,7 +38,7 @@ class Home extends Component {
                   DNA
                 </Col>
                 <Col sm={10}>
-                  <FormControl type="text" name="dna" value={this.state.dna} onChange={this.handleInputChange} pattern="([ATCGatcg])\w+"/>
+                  <FormControl type="text" name="dna" value={this.state.dna} onChange={this.handleInputChange} />
                 </Col>
               </FormGroup>
               <FormGroup controlId="formHorizontalPassword">
@@ -45,7 +46,8 @@ class Home extends Component {
                   DBN
                 </Col>
                 <Col sm={10}>
-                  <FormControl type="text" name="dbn" value={this.state.dbn} onChange={this.handleInputChange} pattern="([.()])+"/>
+                  <FormControl type="text" name="dbn" value={this.state.dbn} onChange={this.handleInputChange}
+                  />
                 </Col>
               </FormGroup>
 

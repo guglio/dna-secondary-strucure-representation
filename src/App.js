@@ -7,6 +7,7 @@ import {
 import './App.css';
 import Home from './Home.js'
 import Header from './Header.js'
+import DNAgraph from './DNAgraph.js'
 
 class App extends Component {
   render() {
@@ -14,7 +15,8 @@ class App extends Component {
       <Router>
         <div>
           <Header />
-          <Route path="/" component={Home}/>
+          <Route exact path="/" component={Home}/>
+          <Route path="/:dna/:dbn" component={DNAgraph} />
         </div>
       </Router>
     );
