@@ -5,7 +5,6 @@ class DNAgraph extends Component{
   constructor(props) {
     super(props);
     let currUrl = this.props.location.pathname.split('/');
-    console.log(currUrl);
     this.state = {
       dna:currUrl[1],
       dbn:currUrl[2]
@@ -17,7 +16,6 @@ class DNAgraph extends Component{
       <div>
         <GraphStyle />
         <code>{this.state.dna}</code><br /><code>{this.state.dbn}</code>
-
       </div>
     )
   }
