@@ -11,9 +11,8 @@
   line-height: 1.5em;
 }
 .baseBubble .innerText{
-  color: inherit;
-  -webkit-filter: invert(100%);
-    filter: invert(100%);
+  color: #fff;
+  mix-blend-mode: difference;
 }
 .baseLabel{}
 .fontStyleCols .row{
@@ -23,7 +22,11 @@
   -webkit-appearance: none;
 }
 .colorPreview{
-  display: inline-block;
-  width: 3em;
-  height: 2em;
+  height: 1.8em;
+  border-radius: .5em;
+}
+.palettePreview .row{
+  display : flex;
+  align-items : center;
+  margin-top: 1em;
 }
