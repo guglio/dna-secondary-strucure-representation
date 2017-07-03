@@ -43,14 +43,15 @@ class GraphStyle extends Component{
       <Grid>
         <Row>
           <h2>Default Style</h2>
-          <Col md={6}>
+          <Col md={6} className="palettePreview">
             <h3>Colors</h3>
             <Row>
-              <Col md={2}>
-                <ControlLabel>A <span className="colorPreview" style={{backgroundColor:'#'+this.state.colorA}}></span></ControlLabel>
+              <Col md={1}>
+                <ControlLabel>A</ControlLabel>
               </Col>
+              <Col md={1} className="colorPreview" style={{backgroundColor:'#'+this.state.colorA}} />
               <Col md={3}>
-                <FormControl componentClass="select" value={this.state.value} onChange={this.handleStyleChange} name="colorA">
+                <FormControl componentClass="select" value={this.state.colorA} onChange={this.handleStyleChange} name="colorA">
                   {boobleColors.map(function(item,index) {
                     return <option value={item} key={index}>{'#'+item}</option>;
                   })}
@@ -58,11 +59,12 @@ class GraphStyle extends Component{
               </Col>
             </Row>
             <Row>
-              <Col md={2}>
-                <ControlLabel>C <span className="colorPreview" style={{backgroundColor:'#'+this.state.colorC}}></span></ControlLabel>
+              <Col md={1}>
+                <ControlLabel>C</ControlLabel>
               </Col>
+              <Col md={1} className="colorPreview" style={{backgroundColor:'#'+this.state.colorC}} />
               <Col md={3}>
-                <FormControl componentClass="select" value={this.state.value} onChange={this.handleStyleChange} name="colorC">
+                <FormControl componentClass="select" value={this.state.colorC} onChange={this.handleStyleChange} name="colorC">
                   {boobleColors.map(function(item,index) {
                     return <option value={item} key={index}>{'#'+item}</option>;
                   })}
@@ -70,11 +72,12 @@ class GraphStyle extends Component{
               </Col>
             </Row>
             <Row>
-              <Col md={2}>
-                <ControlLabel>T <span className="colorPreview" style={{backgroundColor:'#'+this.state.colorT}}></span></ControlLabel>
+              <Col md={1}>
+                <ControlLabel>T</ControlLabel>
               </Col>
+              <Col md={1} className="colorPreview" style={{backgroundColor:'#'+this.state.colorT}} />
               <Col md={3}>
-                <FormControl componentClass="select" value={this.state.value} onChange={this.handleStyleChange} name="colorT">
+                <FormControl componentClass="select" value={this.state.colorT} onChange={this.handleStyleChange} name="colorT">
                   {boobleColors.map(function(item,index) {
                     return <option value={item} key={index}>{'#'+item}</option>;
                   })}
@@ -82,11 +85,12 @@ class GraphStyle extends Component{
               </Col>
             </Row>
             <Row>
-              <Col md={2}>
-                <ControlLabel>G <span className="colorPreview" style={{backgroundColor:'#'+this.state.colorG}}></span></ControlLabel>
+              <Col md={1}>
+                <ControlLabel>G</ControlLabel>
               </Col>
+              <Col md={1} className="colorPreview" style={{backgroundColor:'#'+this.state.colorG}} />
               <Col md={3}>
-                <FormControl componentClass="select" value={this.state.value} onChange={this.handleStyleChange} name="colorG">
+                <FormControl componentClass="select" value={this.state.colorG} onChange={this.handleStyleChange} name="colorG">
                   {boobleColors.map(function(item,index) {
                     return <option value={item} key={index}>{'#'+item}</option>;
                   })}
