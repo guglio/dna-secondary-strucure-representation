@@ -8,6 +8,6 @@
 .navbar-dna{
   background-color: #292929;
 }
-.navbar-dna .navbar-brand{
+.navbar-dna .navbar-brand,.navbar-dna .navbar-brand:hover{
   color: #fff;
 }
