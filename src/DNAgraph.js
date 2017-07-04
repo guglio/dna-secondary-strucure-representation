@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import GraphStyle from './GraphStyle.js';
+import Graph from './Graph.js'
 
 class DNAgraph extends Component{
   constructor(props) {
@@ -16,6 +17,7 @@ class DNAgraph extends Component{
       <div>
         DNA: <code>{this.state.dna}</code><br />DBN: <code>{this.state.dbn}</code>
         <GraphStyle />
+        <Graph dna={this.state.dna} dbn={this.state.dbn}/>
       </div>
     )
   }
