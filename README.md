@@ -5,6 +5,25 @@ notation (DBN).
 The DNA Sequence will contain standard A, C, T, G bases, possibly N (any base), in the 5'-to-3' direction.
 The 2D notation will contain only dots and parentheses (e.g. no pseudo knots).
 
+## Features
+
+**Here the list of the features**
+- [x] each base of the sequence is colored
+- [x] the DNA and DBN sequences are visible (above the graph)
+- [x] every base has a label, and each one of them has a different color (as the style selected)
+- [x] the 2D representation has the possibility to change the style of:
+  - [x] colors of each base
+  - [x] size of the base representation
+  - [x] font for the label
+  - [x] line width
+- [ ] graph close to a planar layout
+- [x] bases are draggable by the user to modify the layout
+- [x] hovering a base on the graph, highlight the corresponding base (DNA and BDN) on the sequence
+- [ ] hovering a base (DNA and BDN) on the sequence highlight the corresponding base on the graph
+- [ ] it's possible to create new connection, connecting two unpaired and complementary bases (e.g. C and G, or A and T). When making a connection, the DBN should update
+- [x] it's possible to share a the view with other users, just copy and paste the URL
+
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
