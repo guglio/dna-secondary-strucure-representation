@@ -11,8 +11,7 @@
   line-height: 1.5em;
 }
 .baseBubble .innerText{
-  color: #fff;
-  mix-blend-mode: difference;
+  color: #000;
 }
 .baseLabel{}
 .fontStyleCols .row{
