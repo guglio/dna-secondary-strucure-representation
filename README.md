@@ -19,10 +19,10 @@ You can see a running version of this web application here:
   - [x] size of the base representation
   - [x] font for the label
   - [x] line width
-- [ ] graph close to a planar layout
+- [x] graph close to a planar layout (kinda)
 - [x] bases are draggable by the user to modify the layout
 - [x] hovering a base on the graph, highlight the corresponding base (DNA and BDN) on the sequence
-- [ ] hovering a base (DNA and BDN) on the sequence highlight the corresponding base on the graph
+- [x] hovering a base (DNA and BDN) on the sequence highlight the corresponding base on the graph
 - [ ] it's possible to create new connection, connecting two unpaired and complementary bases (e.g. C and G, or A and T). When making a connection, the DBN should update
 - [x] it's possible to share a the view with other users, just copy and paste the URL
 
