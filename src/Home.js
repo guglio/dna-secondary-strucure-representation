@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Form,Col,FormGroup,FormControl,Button,Grid,Row} from 'react-bootstrap';
+import {Form,Col,FormGroup,FormControl,Button,Grid,Row,ButtonToolbar} from 'react-bootstrap';
 
 class Home extends Component {
   constructor(props) {
@@ -11,6 +11,8 @@ class Home extends Component {
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.exampleSequence = this.exampleSequence.bind(this);
+    this.resetForm = this.resetForm.bind(this);
   }
 
   handleInputChange(event) {
@@ -21,7 +23,14 @@ class Home extends Component {
       [name]: value
     });
   }
-
+  exampleSequence(){
+    this.setState({dna:'TTGGGGGGACTGGGGCTCCCATTCGTTGCCTTTATAAATCCTTGCAAGCCAATTAACAGGTTGGTGAGGGGCTTGGGTGAAAAGGTGCTTAAGACTCCGT'});
+    this.setState({dbn:'...(((((.(...).)))))........(((((.....((..(.((((((..(((.((...)).)))..)))))).).)))))))...............'});
+  }
+  resetForm(){
+    this.setState({dna:''});
+    this.setState({dbn:''});
+  }
   handleSubmit(event) {
     event.preventDefault();
     let dna = this.state.dna;
@@ -74,9 +83,17 @@ class Home extends Component {
 
               <FormGroup>
                 <Col smOffset={2} sm={10}>
-                  <Button type="submit">
-                    Draw
-                  </Button>
+                  <ButtonToolbar>
+                    <Button type="button" onClick={this.exampleSequence}>
+                      Example
+                    </Button>
+                    <Button type="reset" onClick={this.resetForm}>
+                      Clear
+                    </Button>
+                    <Button type="submit">
+                      Draw
+                    </Button>
+                  </ButtonToolbar>
                 </Col>
               </FormGroup>
             </Form>
