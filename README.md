@@ -6,7 +6,7 @@ The DNA Sequence will contain standard A, C, T, G bases, possibly N (any base), 
 The 2D notation will contain only dots and parentheses (e.g. no pseudo knots).
 
 You can see a running version of this web application here:   
-    [dna.guglielmo-turco.com](dna.guglielmo-turco.com)
+    [dna.guglielmo-turco.com](http://dna.guglielmo-turco.com)
 
 ## Features
 
