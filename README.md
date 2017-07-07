@@ -19,7 +19,7 @@ You can see a running version of this web application here:
   - [x] size of the base representation
   - [x] font for the label
   - [x] line width
-- [x] graph close to a planar layout (kinda)
+- [x] graph close to a planar layout (WIP)
 - [x] bases are draggable by the user to modify the layout
 - [x] hovering a base on the graph, highlight the corresponding base (DNA and BDN) on the sequence
 - [x] hovering a base (DNA and BDN) on the sequence highlight the corresponding base on the graph
