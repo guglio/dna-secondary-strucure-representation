@@ -1,0 +1,7 @@
+.baseActive{
+  color: #000 !important;
+  border-radius: 50%;
+  text-align: center;
+  width: 1.5em;
+  display: inline-block;
+}
