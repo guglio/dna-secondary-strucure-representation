@@ -167,7 +167,7 @@ componentWillMount(){
           </Row> */}
         <Row>
           <Col md={12} id="forceLayout">
-            <ForceLayout width={720} height={720} links={this.state.links} nodes={this.state.nodes} fonts={this.state.fonts} booble={this.state.booble} line={this.state.line} colorA={this.state.colorA} colorC={this.state.colorC} colorT={this.state.colorT} colorG={this.state.colorG} dna={this.state.dna.split('')} dbn={this.state.dbn.split('')}/>
+            <ForceLayout width={1200} height={720} links={this.state.links} nodes={this.state.nodes} fonts={this.state.fonts} booble={this.state.booble} line={this.state.line} colorA={this.state.colorA} colorC={this.state.colorC} colorT={this.state.colorT} colorG={this.state.colorG} dna={this.state.dna.split('')} dbn={this.state.dbn.split('')}/>
           </Col>
         </Row>
         </Grid>
