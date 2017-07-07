@@ -1,3 +1,6 @@
+// This component show the graph, and handle the style changes
+// I used D3 force layout V4
+
 import React, {Component} from 'react'
 import * as d3 from "d3";
 import './ForceLayout.css';
@@ -5,6 +8,8 @@ import './ForceLayout.css';
 class ForceLayout extends Component{
 
   componentDidUpdate() {
+    // When the component get new props from the parent, it updates the nodes with the new colors, new sizes, new fonts and bigger (or smaller) links
+
     let newNodes = this.props.nodes;
 
     newNodes.map((item,index) => {
@@ -24,6 +29,8 @@ class ForceLayout extends Component{
       .attr("stroke-width", this.props.line);
   }
   componentDidMount(){
+    // As soon as the component is mounted, I feed the simulation with the nodes and links to create the graph
+
     const width = this.props.width,
           height = this.props.height,
           graph = {
@@ -48,7 +55,11 @@ class ForceLayout extends Component{
               start:this.props.booble,
               end:(height - this.props.booble)
             }
-          };
+          }; // since D3V4 doesn't have the size option, I had to bound the nodes to parent svg, this var is used within the function below (boundariesBox)
+
+
+
+          // configuration for the graph. I still have some issues reguarding the positioning of each base, but now is less messy than the beginning
 
     const simulation = d3.forceSimulation()
         .force("link", d3.forceLink().id(d => d.id).strength(1).distance(offsetBooble))
@@ -75,8 +86,8 @@ class ForceLayout extends Component{
                       .attr("class",d => "idBase"+d.id)
                       .attr("fill", d => d.group)
                       .attr("data-color", d => d.group)
-                      .on("mouseover", mapMouseOver)
-                      .on("mouseout", mapMouseOut)
+                      .on("mouseover", mapMouseOver) // function to handle the manipulation
+                      .on("mouseout", mapMouseOut) // function to handle the manipulation
                       .call(d3.drag()
                           .on("start", dragStarted)
                           .on("drag", dragged)
@@ -88,8 +99,8 @@ class ForceLayout extends Component{
                       .data(graph.nodes)
                       .enter()
                       .append("text")
-                      .on("mouseover", mapMouseOver)
-                      .on("mouseout", mapMouseOut)
+                      .on("mouseover", mapMouseOver) // function to handle the manipulation
+                      .on("mouseout", mapMouseOut) // function to handle the manipulation
                       .text(d => d.base || '')
                       .attr("fill", "#000");
 
@@ -101,13 +112,15 @@ class ForceLayout extends Component{
               .force("link")
               .links(graph.links);
 
-    function bounderisBox(bounds,coor){
+// this function check if the current coordinate is outside the viewbox, and if so, set to the nearest bound
+    function boundariesBox(bounds,coor){
       let newCoor;
       (coor >= bounds.start && coor <= bounds.end) ? newCoor = coor : (coor < bounds.start) ? newCoor = bounds.start : newCoor = bounds.end;
 
       return newCoor;
     }
 
+    // highlight the correspondig base on the dna and dbn sequence
     function mapMouseOver(d){
       let base = document.getElementsByClassName("idBase"+d.id);
 
@@ -116,6 +129,7 @@ class ForceLayout extends Component{
       base[0].style.backgroundColor = d.group;
       base[1].style.backgroundColor = d.group;
     }
+    // remove the highlight the correspondig base on the dna and dbn sequence
     function mapMouseOut(d){
       let base = document.getElementsByClassName("idBase"+d.id);
 
@@ -125,21 +139,20 @@ class ForceLayout extends Component{
       base[1].style.backgroundColor = "inherit";
     }
 
-
     function ticked() {
 
         link
-            .attr('x1', d => bounderisBox(svgBounds.x,d.source.x) || 0)
-            .attr('y1', d => bounderisBox(svgBounds.y,d.source.y) || 0)
-            .attr('x2', d => bounderisBox(svgBounds.x,d.target.x) || 0)
-            .attr('y2', d => bounderisBox(svgBounds.y,d.target.y) || 0);
+            .attr('x1', d => boundariesBox(svgBounds.x,d.source.x) || 0)
+            .attr('y1', d => boundariesBox(svgBounds.y,d.source.y) || 0)
+            .attr('x2', d => boundariesBox(svgBounds.x,d.target.x) || 0)
+            .attr('y2', d => boundariesBox(svgBounds.y,d.target.y) || 0);
 
         node
-            .attr("cx", d => bounderisBox(svgBounds.x,d.x) || 0)
-            .attr("cy", d => bounderisBox(svgBounds.y,d.y )|| 0);
+            .attr("cx", d => boundariesBox(svgBounds.x,d.x) || 0)
+            .attr("cy", d => boundariesBox(svgBounds.y,d.y )|| 0);
         text
-            .attr("x", d => bounderisBox(svgBounds.x,(d.x-offsetText)) || 0)
-            .attr("y", d => bounderisBox(svgBounds.y,(d.y+offsetText)) || 0)
+            .attr("x", d => boundariesBox(svgBounds.x,(d.x-offsetText)) || 0)
+            .attr("y", d => boundariesBox(svgBounds.y,(d.y+offsetText)) || 0)
     }
 
     function dragStarted(d) {
@@ -191,6 +204,8 @@ class ForceLayout extends Component{
   }
 }
 
+
+// highlight the correspondig base on the graph
 function mouseEnterHandle(event){
   const target = event.target;
   const className = target.className;
@@ -198,7 +213,7 @@ function mouseEnterHandle(event){
 
   targetBase.setAttribute("fill","red");
 }
-
+// remove the highlight the correspondig base on the graph
 function mouseLeaveHandle(event){
   const target = event.target;
   const className = target.className;

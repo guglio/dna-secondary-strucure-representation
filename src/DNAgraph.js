@@ -41,6 +41,7 @@ handleStyleChange(event) {
   });
 }
 componentWillMount(){
+  // Add the default styles and create the data to feed the graph, before it mounts
   const colorGroup = {
     A: this.state.colorA,
     C: this.state.colorC,
@@ -150,6 +151,7 @@ componentWillMount(){
               </Row>
             </Col>
           </Row>
+          {/* In previous releases, I had a preview box, but, because the changes are pushed on the fly to the graph, I opted to comment out this section. */}
           {/* <Row>
             <Col md={12}>
               <h3>Style Preview</h3>

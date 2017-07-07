@@ -37,6 +37,8 @@ class Home extends Component {
     let dbn = this.state.dbn;
     let errState = '';
 
+    // validate data before submit
+
     if(dna.length <= 0)
       errState += 'DNA sequence must be > 0 ';
     if(dbn.length <= 0)
